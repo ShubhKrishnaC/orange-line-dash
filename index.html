@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#101a30">
+    <title>Orange Line Dash</title>
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Orange Line Dash home">
+          <span class="brand-mark">O</span>
+          <span>ORANGE LINE <b>DASH</b></span>
+        </a>
+        <div class="top-actions">
+          <span class="best-chip">BEST <b id="bestTop">0</b></span>
+          <button id="soundButton" class="icon-button" aria-label="Toggle sound">♫</button>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Endless runner game">
+        <canvas id="game" aria-label="Game area. Use arrow keys or swipe to move."></canvas>
+        <div class="hud" id="hud" hidden>
+          <div class="hud-stat"><span>SCORE</span><strong id="score">0</strong></div>
+          <div class="hud-stat"><span>COINS</span><strong id="coins">0</strong></div>
+          <div class="hud-stat"><span>DISTANCE</span><strong><span id="distance">0</span><small>m</small></strong></div>
+          <div class="hud-power" id="powerIndicator" hidden>MAGNET <b id="powerTime">0</b></div>
+          <button id="pauseButton" class="pause-button" aria-label="Pause">Ⅱ</button>
+        </div>
+
+        <section class="screen" id="menuScreen">
+          <div class="menu-copy">
+            <p class="eyebrow"><span></span> YOUR NEXT RUN STARTS HERE</p>
+            <h1>ORANGE LINE<br><em>DASH</em></h1>
+            <p class="intro">Dodge the rush. Grab the gold.<br>How far can you run?</p>
+            <button id="playButton" class="primary-button">START RUN <span>→</span></button>
+            <p class="controls-hint">← → MOVE <i>•</i> ↑ JUMP <i>•</i> ↓ SLIDE</p>
+          </div>
+          <div class="character-card">
+            <div class="card-glow"></div>
+            <img src="assets/characters/runner.png" alt="Your uploaded photo is the runner character">
+            <span class="photo-tag">YOUR PHOTO · YOUR RUN</span>
+            <div class="best-card"><span>PERSONAL BEST</span><b id="bestMenu">0</b></div>
+          </div>
+          <div class="menu-foot"><span>THREE LANES. ONE CHANCE.</span><span>BUILT FOR THE LONG RUN</span></div>
+        </section>
+
+        <section class="screen message-screen" id="pauseScreen" hidden>
+          <div class="message-card">
+            <p class="eyebrow">TAKE A BREATHER</p>
+            <h2>RUN PAUSED</h2>
+            <p>Your track is waiting.</p>
+            <button id="resumeButton" class="primary-button">RESUME <span>→</span></button>
+            <button id="pauseRestartButton" class="text-button">START A NEW RUN</button>
+          </div>
+        </section>
+
+        <section class="screen message-screen" id="overScreen" hidden>
+          <div class="message-card">
+            <p class="eyebrow">THAT WAS A GOOD RUN</p>
+            <h2>RUN OVER</h2>
+            <div class="results">
+              <div><span>SCORE</span><b id="finalScore">0</b></div>
+              <div><span>DISTANCE</span><b><span id="finalDistance">0</span><small> m</small></b></div>
+              <div><span>COINS</span><b id="finalCoins">0</b></div>
+            </div>
+            <p class="best-result">PERSONAL BEST <b id="bestFinal">0</b></p>
+            <button id="againButton" class="primary-button">RUN IT BACK <span>→</span></button>
+            <button id="menuButton" class="text-button">MAIN MENU</button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span>AN ORIGINAL THREE-LANE RUNNER</span>
+        <span>KEYBOARD <b>OR</b> TOUCH</span>
+      </footer>
+    </main>
+    <script src="src/main.js" defer></script>
+  </body>
+</html>
